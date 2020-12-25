@@ -1,0 +1,35 @@
+<html>
+<head><title>Project11.3FrameRight</title>
+<style>
+  body {background-color:gold; color:brown; font-family: areal; font-size: 14}
+</style>
+<script>
+   function PrintText(f) {
+       document.write("Name of text field is: " + "<b>" + f.Bio.name + "<br/></b>"); 
+       document.write("Entered text is: <br/><b>"+ f.Bio.value +"<br/></b>");
+                       }
+    function OpenNew() {
+        var NWR=window.open(" ", " ",  "width=200,height=150, resizable=yes, scrollbars");
+        NWR.document.write("<p>Customer wrote about himself: </p><br/>");
+        NWR.document.write(window.parent.FrameRight.document.FormRight.Bio);    
+                       }                      
+    function CloseNew() {
+        NWR.close();
+    }                   
+</script>    
+</head>
+<body>
+   <form name="FormRight" onSubmit="PrintText(FormRight)">
+      <h3>Introduce yourself, please, here:</h3>
+      <textarea name="Bio" rows="6" cols="50" align="left">I was born...</textarea>
+      <br/><br/>
+      <input type="submit" value="SUBMIT" onClick="PrintText(FormRight)">
+      <input type="reset"  value="RESET"> <br/><br/><b>
+       Click if you'd like to have text in a new window: <br/></b>
+      <input type="button" value="Open New Window" onClick="OpenNew()">
+      <input type="button" value="Close New Window" onClick="CloseNew()"><br/>
+    </form>
+  </body> 
+</html>      
+
+  

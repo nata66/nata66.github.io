@@ -1,0 +1,36 @@
+<html>
+<head><title>Project11.4FrameLeft</title>
+<style>
+   body {background-color:cyan; color: black; font-family:verdana; font-size:14}
+</style>
+<script>
+   function PrintForm(f) {
+      document.write("Name of this form is: " + "<b>" +f.name + "<br/><br/></b>");
+      document.write("Customer entered text:" + "<br/><b>" + f.TextLine.value +"<br/><b/>");
+                         } 
+   function NewWindow(){
+        var NWL=window.open(" ", " ",  "width=200,height=150,resizable=yes,scrollbars");
+        NWL.document.write("<p><h4>Customer entered text: <br/>");
+        NWL.document.write(window.parent.FrameLeft.document.FormLeft.TextLine.value);  
+        NWL.document.write("</p></h4>");
+      }
+   function PrintResult(f) {                     
+        NWL.document.write("Name of this form is: " + "<b>" +f.name + "<br/><br/></b>");
+        NWL.document.write("Customer entered text:" + "<br/><b>" + f.TextLine.value +"<br/><b/>");
+                           }
+    function CloseWindow(){
+           NWL.close();
+                         }                   
+</script>                         
+<body>
+  <form name="FormLeft" onSubmit="PrintForm(FormLeft)" target="_self">
+       Type a line of text here: <br/>
+      <input type="text" name="TextLine" size="50"> <br/><br/>
+      <input type="submit" value="SUBMIT">
+      <input type="reset" value="RESET"> <br/><br/>
+      Click here if you want get results in a new window: <br/>
+      <input type="button" name="NewW" value="Open New Window" onClick="NewWindow()"></br></br>
+      <input type="button"  name="CloseW" value="Close New Window" onClick="CloseWindow()"><br/> 
+  </form>
+</body>     
+</html>         
