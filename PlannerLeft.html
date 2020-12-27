@@ -1,0 +1,73 @@
+<html>
+<head><title>BenPlannerRight</title>
+<style>
+  body {background-color:gold; color:black; font-family:areal; font-size:16}
+ </style> 
+  <script>
+   function SaveForm() {
+    var http = require('http');
+    var fs = require('fs');
+    http.createServer(function (req, res) {
+      //Open a file on the server and return its content:
+      fs.readFile('demofile1.html', function(err, data) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        return res.end();
+      });
+    }).listen(8080);
+                           } 
+</script>                           
+</head>
+<body>
+  <table>
+    <col style="width:30%">
+    <col style="width:70%">
+    <thead>
+      <tr>
+        <th>Should be done</th>
+        <th>Details</th>
+      </tr>  
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="Biz" value="myProject">My Project</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="Biz" value="studio">Studio</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>  
+      <tr>
+        <td><input type="checkbox" name="Biz" value="KMG">KMG</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>  
+      <tr>
+        <td><input type="checkbox" name="Biz" value="calls">Calls</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>   
+      <tr>
+        <td><input type="checkbox" name="Biz" value="store">Store</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>  
+      <tr>
+        <td><input type="checkbox" name="Biz" value="grocery">Grocery</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="Biz" value="cooking">Cooking</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="Biz" value="gas">Gas</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="Biz" value="gym">Gym</td>
+        <td><input type="text" size="50" name="details"></td>
+      </tr>      
+    </tbody>
+  </table>   
+    <br/><br/><strong>
+    <input type="button" value="Click when finish" onclick="SaveForm()"></strong>   
+  </body>
+ </html> 
